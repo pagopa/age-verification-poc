@@ -3,5 +3,5 @@
 
 # All files are also owned by @pagopa/io-wallet-externals,
 # except for those under /website
-* @pagopa/io-wallet-externals
+* @pagopa/iowallet-externals
 /website/* @pagopa/io-wallet
