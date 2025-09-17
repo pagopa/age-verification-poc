@@ -11,7 +11,7 @@
     "prettify": "prettier --write \"(ts|locales)/**/*.(ts|tsx|json)\"",
     "prettier:check": "prettier --check \"ts/**/*.(ts|tsx)\"",
     "nuke": "rm -rf ios/Pods && rm -rf ios/DerivedData && cd android && ./gradlew clean && cd .. && rm -rf node_modules",
-    "prepare": "husky"
+    "prepare": "husk"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
