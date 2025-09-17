@@ -9,6 +9,9 @@ on:
 jobs:
   checks:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
     environment: dev
     concurrency:
       group: ${{ github.workflow }}-pr-staticcheck-${{ github.head_ref || github.run_id }}
@@ -22,16 +25,12 @@ jobs:
 
       - id: run-tsc
         run: yarn tsc
-        working-directory: app
 
       - id: run-lint
         run: yarn lint
-        working-directory: app
 
       - id: run-prettier
         run: yarn prettier:check
-        working-directory: app
 
       - id: run-test
         run: yarn test
-        working-directory: app
