@@ -19,7 +19,6 @@ jobs:
 
       - id: setup
         uses: ./.github/actions/setup-composite
-        working-directory: app
 
       - id: run-tsc
         run: yarn tsc
