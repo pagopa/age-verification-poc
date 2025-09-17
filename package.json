@@ -11,6 +11,7 @@
     "tsc": "tsc --noEmit",
     "prettify": "prettier --write \"(ts|locales)/**/*.(ts|tsx|json)\"",
     "prettier:check": "prettier --check \"ts/**/*.(ts|tsx)\"",
+    "lint-autofix": "eslint . -c .eslintrc.js --ext .ts,.tsx --fix",
     "nuke": "rm -rf ios/Pods && rm -rf ios/DerivedData && cd android && ./gradlew clean && cd .. && rm -rf node_modules",
     "prepare": "husky"
   },
