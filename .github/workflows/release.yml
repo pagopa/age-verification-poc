@@ -1,4 +1,6 @@
 name: Start a new release cycle on stores
+permissions:
+  contents: write
 on:
   workflow_dispatch:
     inputs:
