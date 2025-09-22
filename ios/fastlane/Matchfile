@@ -1,4 +1,5 @@
-git_url("git@github.com:pagopa/age-verification-poc-certs.git")
+git_url("git@github.com:pagopa/io-eudiw-app-certs.git")
+git_branch("master")
 
 storage_mode("git")
 

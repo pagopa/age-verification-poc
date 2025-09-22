@@ -1,4 +1,4 @@
-name: Start a new release cycle on stores
+name: Build and publish internal release
 permissions:
   contents: write
 on:
@@ -121,7 +121,7 @@ jobs:
         env:
           RUBYOPT: '-rostruct' # TODO: Remove when https://github.com/fastlane/fastlane/pull/21950 gets released
           ENCODED_IOAPP_GOOGLE_SERVICES_JSON_FILE: ${{secrets.ENCODED_IOAPP_GOOGLE_SERVICES_JSON_FILE}}
-          ENCODED_IOAPP_JSON_KEY_FILE: ${{secrets.ENCODED_IOAPP_JSON_KEY_FILE}}
+          ENCODED_APP_JSON_KEY_FILE: ${{secrets.ENCODED_APP_JSON_KEY_FILE}}
           ENCODED_IO_APP_RELEASE_KEYSTORE: ${{secrets.ENCODED_IO_APP_RELEASE_KEYSTORE}}
           IO_APP_RELEASE_STORE_FILE: ${{secrets.IO_APP_RELEASE_STORE_FILE}}
           IO_APP_RELEASE_STORE_PASSWORD: ${{secrets.IO_APP_RELEASE_STORE_PASSWORD}}
@@ -138,7 +138,7 @@ jobs:
           bundle exec fastlane download_apk
         env:
           RUBYOPT: '-rostruct' # TODO: Remove when https://github.com/fastlane/fastlane/pull/21950 gets released
-          ENCODED_IOAPP_JSON_KEY_FILE: ${{secrets.ENCODED_IOAPP_JSON_KEY_FILE}}
+          ENCODED_APP_JSON_KEY_FILE: ${{secrets.ENCODED_APP_JSON_KEY_FILE}}
           VERSION_CODE: ${{ env.VERSION_CODE }}
       - id: upload-universal-apk
         # We don't want to fail whole job if the universal APK upload step fails
