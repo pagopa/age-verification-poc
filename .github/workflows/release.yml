@@ -157,7 +157,7 @@ jobs:
       - id: upload-android-assets-release
         continue-on-error: true
         run: |
-          gh release upload ${{ steps.get-current-version.outputs.NEW_APP_VERSION }} android/app/build/outputs/bundle/release/app-release.aab#android-app-release.aab android/AgeVerification-universal.apk#AgeVerification-universal.apk
+          gh release upload ${{ needs.bump-app.outputs.newAppVersion }} android/app/build/outputs/bundle/release/app-release.aab#android-app-release.aab android/AgeVerification-universal.apk#AgeVerification-universal.apk
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   release-ios:
@@ -237,6 +237,6 @@ jobs:
       - id: upload-ipa-release
         continue-on-error: true
         run: |
-          gh release upload ${{ steps.get-current-version.outputs.NEW_APP_VERSION }} ios/AgeVerification.ipa#AgeVerification.ipa
+          gh release upload ${{ needs.bump-app.outputs.newAppVersion }} ios/AgeVerification.ipa#AgeVerification.ipa
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
